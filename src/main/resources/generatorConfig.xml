@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry
+            location="D:\tools\apache-maven-3.5.3\repository\mysql\mysql-connector-java\5.1.40\mysql-connector-java-5.1.40.jar"/>
+    <context id="context1">
+        <!-- 是否生成注释 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- 数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://dreamatach.com:3306/quartz?useSSL=false"
+                        userId="root" password="dream@2018."/>
+
+        <!-- 生成的包名和工程名 -->
+        <javaModelGenerator targetPackage="com.dream.generator.vo"
+                            targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources"/>
+        <javaClientGenerator targetPackage="com.dream.generator.mapper"
+                             targetProject="src/main/java" type="XMLMAPPER"/>
+
+        <!-- 数据库表 -->
+        <table tableName="QRTZ_BLOB_TRIGGERS" domainObjectName="Triggers"/>
+        <!-- 设置别名 -->
+        <!--
+        <columnOverride column="ds_id" property="dsId" />
+        <columnOverride column="ds_name" property="dsName" />
+        <columnOverride column="dt_name" property="dtName" />
+        <columnOverride column="login_name" property="loginName" />
+        <columnOverride column="login_pwd" property="loginPwd" />
+         -->
+    </context>
+
+
+
+</generatorConfiguration>
+
